@@ -1,31 +1,31 @@
 -- 1. Crear tipos enumerados para las opciones
 CREATE TYPE contact_source_type AS ENUM (
-    'Expediente de Crédito', 
-    'Investigación', 
-    'Oficio Búsqueda', 
-    'Otro'
+    'Credit File', 
+    'Investigation', 
+    'Search Warrant', 
+    'Other'
 );
 
 CREATE TYPE contact_medium_type AS ENUM (
-    'Teléfono',
-    'Correo',
+    'Phone',
+    'Email',
     'Whatsapp',
     'Facebook',
-    'Otra Red Social'
+    'Other Social Media'
 );
 
 CREATE TYPE contact_label_type AS ENUM (
-    'Móvil',
-    'Fijo',
-    'Trabajo',
+    'Mobile',
+    'Landline',
+    'Work',
     'Personal',
-    'Familiar'
+    'Family'
 );
 
 CREATE TYPE contact_status_type AS ENUM (
-    'Activo',
-    'Inactivo',
-    'Verificación Pendiente'
+    'Active',
+    'Inactive',
+    'Pending Verification'
 );
 
 --2. Create the debtor contacts table
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS collection.debtor_contacts (
     -- Metadata and status
     is_primary BOOLEAN DEFAULT FALSE,
     has_contact BOOLEAN NOT NULL DEFAULT FALSE,
-    status contact_status_type NOT NULL DEFAULT 'Verificación Pendiente',
+    status contact_status_type NOT NULL DEFAULT 'Pending Verification',
     
     -- Audit fields
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
