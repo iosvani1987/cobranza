@@ -5,9 +5,9 @@ CREATE TABLE IF NOT EXISTS collection.partner (
     second_last_name VARCHAR(50),  -- Optional (not all have second last name)
     phone VARCHAR(20),   -- Use VARCHAR for international formats
     email VARCHAR(100) CHECK (email LIKE '%@%.%'), 
-    date_created DATE DEFAULT CURRENT_DATE,
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     active BOOLEAN DEFAULT TRUE,
-    last_updated_date DATE DEFAULT CURRENT_DATE
+    last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS collection.investment (
@@ -16,8 +16,8 @@ CREATE TABLE IF NOT EXISTS collection.investment (
     investment_date DATE NOT NULL,
     outstanding_capital NUMERIC(10, 2) NOT NULL,
     investment_amount NUMERIC(10, 2) NOT NULL,
-    management_term_date DATE, -- Remove default here
-    date_created DATE DEFAULT CURRENT_DATE,
+    end_date TIMESTAMP,
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     active BOOLEAN DEFAULT TRUE,
-    last_updated_date DATE DEFAULT CURRENT_DATE
+    last_updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
