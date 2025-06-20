@@ -1,0 +1,5 @@
+external_investment_id,portafolio_origin,investment_date,investment_amount,outstanding_capital,portfolio_type,partner_id,percentage
+INV001,FISA,2024-02-19,43000.00,410838.02,personal,1,100.00
+INV002,FISA,2024-05-17,15000.00,115073.24,personal,1,50.00
+INV002,FISA,2024-05-17,15000.00,115073.24,personal,3,50.00
+INV003,FISA,2024-09-13,21600.00,190452.36,personal,1,100.00
